@@ -3,13 +3,6 @@ require 'sass'
 require 'compass'
 
 
-#configure do
-#  Compass.configuration do |config|
-#    config.sass_dir = 'css'
-#  end
-#  set :scss, Compass.sass_engine_options
-#end
-
 set :views, scss: 'css', default: 'views'
 helpers do
   def find_template(views, name, engine, &block)

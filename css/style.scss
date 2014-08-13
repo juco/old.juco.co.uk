@@ -28,6 +28,7 @@ article.welcome {
 
     section {
       padding: 10px;
+      margin-right: 30px;
 
       header {
         font-wight: bold;
@@ -39,9 +40,17 @@ article.welcome {
           margin: 0px 10px 0px 0px;
         }
       }
+    }
 
-      .social-links {
-        float: right;
+    .social-links {
+      position: absolute;
+      right: 5px;
+      top: 40px;
+
+      border: 1px solid red;
+
+      ul {
+        list-style: none;
       }
     }
 
@@ -53,4 +62,8 @@ article.welcome {
       webkit-border-radius: 15px;
     }
   }
+}
+
+.skills-container {
+  display: none;
 }

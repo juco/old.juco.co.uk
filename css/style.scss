@@ -1,0 +1,56 @@
+html, body {
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  a {
+    color: #5CB8E6;
+    font-size: 15px;
+  }
+}
+
+.container {
+  height: 100%;
+  background: URL('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+article.welcome {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.75);
+
+  div.content {
+    padding: 30px;
+
+    section {
+      padding: 10px;
+
+      header {
+        font-wight: bold;
+        font-size: 30px;
+      }
+
+      .links {
+        span {
+          margin: 0px 10px 0px 0px;
+        }
+      }
+
+      .social-links {
+        float: right;
+      }
+    }
+
+    .me {
+      float: left;
+      width: 150px;
+      margin-right: 15px;
+      border-radius: 15px;
+      webkit-border-radius: 15px;
+    }
+  }
+}

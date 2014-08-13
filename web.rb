@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sass'
 require 'compass'
 
-
 set :views, scss: 'css', default: 'views'
 helpers do
   def find_template(views, name, engine, &block)

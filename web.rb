@@ -18,3 +18,8 @@ end
 get '/css/style.css' do
   scss :style, style: :expanded
 end
+
+get '/javascripts/*' do
+  file = params[:splat].first.split('.').first
+  coffee "/../javascripts/#{file}".to_sym
+end

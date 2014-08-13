@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'coffee-script'
 gem 'sass', '3.2.19'
-gem 'compass'
 
 group :development do
   gem 'guard'

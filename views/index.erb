@@ -1,9 +1,11 @@
+<%= erb :svg %>
+
 <article class="welcome">
   <div class="content">
     <img src="me.jpg" class="me" />
     <section>
       <header>Julian Cohen</header>
-      <p>Hi! I'm a software geek with a passion for cars and shiny things. Currently working
+      <p>A software geek with a passion for cars and shiny things. Currently working
       as a Lead Web Developer for Pure360 in Brighton.<p>
       <div class="links">
         <span><a href="#" id="skills">Skills</a></span>
@@ -13,14 +15,39 @@
     </section>
     <div class="social-links">
       <ul>
-        <li><a href=#">SL</a></li>
-        <li><a href=#">SL</a></li>
-        <li><a href=#">SL</a></li>
+        <li>
+          <a href="http://linkedin.com" target="_blank">
+            <svg class="icon icon-linkedin" viewBox="0 0 32 32"><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/juco" target="_blank">
+            <svg class="icon icon-github" viewBox="0 0 32 32"><use xlink:href="#icon-github"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+JulianCohen1/posts">
+            <svg class="icon icon-googleplus" viewBox="0 0 32 32"><use xlink:href="#icon-googleplus"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/julian.cohen.5">
+            <svg class="icon icon-facebook" viewBox="0 0 32 32"><use xlink:href="#icon-facebook"></use></svg></li>
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com/juc0" target="_blank">
+            <svg class="icon icon-twitter" viewBox="0 0 32 32"><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </article>
 
-<div class="skills-container">
+<div class="skills-container hidden">
   <p>I got skillz</p>
+  <a href="#" id="close-skills" id="close-skills">
+    <svg class="icon icon-cross cancel-icon" viewBox="0 0 32 32"><use xlink:href="#icon-cross"></use></svg>
+  </a>
 </div>

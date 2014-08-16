@@ -7,4 +7,5 @@ gem 'sass', '3.2.19'
 group :development do
   gem 'guard'
   gem 'guard-livereload'
+  gem 'shotgun'
 end

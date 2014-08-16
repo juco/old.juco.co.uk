@@ -1,3 +1,5 @@
+$blue: #5CB8E6;
+
 html, body {
   width: 100%;
   margin: 0;
@@ -5,8 +7,9 @@ html, body {
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
   a {
-    color: #5CB8E6;
+    color: $blue;
     font-size: 15px;
   }
 }
@@ -47,13 +50,17 @@ article.welcome {
 
     .social-links {
       position: absolute;
-      right: 5px;
-      top: 40px;
-
-      border: 1px solid red;
+      right: 20px;
+      top: 25px;
 
       ul {
         list-style: none;
+
+        a {
+          &:hover {
+            fill: $blue;
+          }
+        }
       }
     }
 
@@ -78,4 +85,15 @@ article.welcome {
   &.hidden {
     display: none;
   }
+
+  .cancel-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+/* General styles (should be moved) */
+.icon {
+  width: 30px;
 }

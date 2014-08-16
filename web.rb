@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sass'
-require 'compass'
 
 set :views, scss: 'css', default: 'views'
 helpers do
@@ -20,6 +19,6 @@ get '/css/style.css' do
 end
 
 get '/javascripts/*' do
-  file = params[:splat].first.split('.').first
+  file = params[:splat].join('/').split('.').first
   coffee "/../javascripts/#{file}".to_sym
 end

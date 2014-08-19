@@ -52,6 +52,18 @@ article.welcome {
       right: 20px;
       top: 0;
 
+      @media (max-width: 300px) {
+        position: fixed;
+        ul {
+          list-style-type: none;
+
+          li {
+            display: inline;
+          }
+        }
+      }
+
+
       ul {
         list-style: none;
 

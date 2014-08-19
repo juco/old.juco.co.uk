@@ -52,6 +52,16 @@ article.welcome {
       right: 20px;
       top: 0;
 
+      ul {
+        list-style: none;
+
+        a {
+          &:hover {
+            fill: $secondaryColor;
+          }
+        }
+      }
+
       @media (max-width: 300px) {
         position: fixed;
         ul {
@@ -59,17 +69,6 @@ article.welcome {
 
           li {
             display: inline;
-          }
-        }
-      }
-
-
-      ul {
-        list-style: none;
-
-        a {
-          &:hover {
-            fill: $secondaryColor;
           }
         }
       }

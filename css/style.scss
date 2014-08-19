@@ -29,58 +29,56 @@ article.welcome {
   padding: 2.5%;
   background-color: $transparent;
 
-  div.content {
-    section {
-      margin-right: 30px;
+  section {
+    margin-right: 30px;
 
-      header {
-        font-wight: bold;
-        font-size: 30px;
+    header {
+      font-wight: bold;
+      font-size: 30px;
+    }
+
+    .links {
+      text-align: center;
+
+      span {
+        margin: 0px 10px 0px 0px;
       }
+    }
+  }
 
-      .links {
-        text-align: center;
+  .social-links {
+    position: absolute;
+    right: 20px;
+    top: 0;
 
-        span {
-          margin: 0px 10px 0px 0px;
+    ul {
+      list-style: none;
+
+      a {
+        &:hover {
+          fill: $secondaryColor;
         }
       }
     }
 
-    .social-links {
-      position: absolute;
-      right: 20px;
-      top: 0;
-
+    @media (max-width: 300px) {
+      position: fixed;
       ul {
-        list-style: none;
+        list-style-type: none;
 
-        a {
-          &:hover {
-            fill: $secondaryColor;
-          }
-        }
-      }
-
-      @media (max-width: 300px) {
-        position: fixed;
-        ul {
-          list-style-type: none;
-
-          li {
-            display: inline;
-          }
+        li {
+          display: inline;
         }
       }
     }
+  }
 
-    .me {
-      float: left;
-      width: 150px;
-      margin-right: 15px;
-      border-radius: 15px;
-      webkit-border-radius: 15px;
-    }
+  .me {
+    float: left;
+    width: 150px;
+    margin-right: 15px;
+    border-radius: 15px;
+    webkit-border-radius: 15px;
   }
 }
 

@@ -30,7 +30,7 @@ article.welcome {
   background-color: $transparent;
 
   section {
-    margin-right: 30px;
+    margin-right: 35px;
 
     header {
       font-wight: bold;
@@ -59,13 +59,12 @@ article.welcome {
           fill: $secondaryColor;
         }
       }
-    }
 
-    @media (max-width: 300px) {
-      position: fixed;
-      ul {
+      @media (max-width: 300px) {
+        position: fixed;
+        top: 0;
+        left: 0;
         list-style-type: none;
-
         li {
           display: inline;
         }

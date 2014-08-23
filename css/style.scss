@@ -1,6 +1,17 @@
 $secondaryColor: #5CB8E6;
 $transparent: rgba(255, 255, 255, 0.75);
 
+/* Skill percentages */
+$skillRuby: 70%;
+$skillUnix: 80%;
+$skillPhp: 80%;
+$skillJs: 70%;
+$skillAngular: 80%;
+$skillBackbone: 80%;
+$skillCss: 30%;
+$skillTesting: 60%;
+$skillJava: 30%;
+
 html, body {
   width: 100%;
   margin: 0;
@@ -13,6 +24,10 @@ body {
     color: $secondaryColor;
     font-size: 15px;
   }
+}
+
+h2 {
+  text-align: center;
 }
 
 .container {
@@ -60,7 +75,7 @@ article.welcome {
         }
       }
 
-      @media (max-width: 300px) {
+      @media (max-width: 768px) {
         position: fixed;
         top: 0;
         left: 0;
@@ -85,9 +100,19 @@ article.welcome {
   position: fixed;
   width: 75%;
   left: 50%;
-  height: 70%;
+  height: 60%;
   margin: 0 0 0 -38%;
+  padding: 20px;
   background-color: $transparent;
+  overflow-y: scroll;
+
+  .matrix {
+    height: 400px;
+  }
+
+  .additions {
+    clear: left;
+  }
 
   &.hidden {
     display: none;
@@ -95,8 +120,73 @@ article.welcome {
 
   .cancel-icon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 5;
+    top: 5;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    width: 40%;
+    margin-bottom: 30px;
+  }
+
+  dd {
+    float: left;
+    width: 50%;
+  }
+
+  .skill-bar {
+    max-width: 70%;
+    background-color: transparent;
+    height: 12px;
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: $secondaryColor;
+
+    .skill {
+      border-radius: 6px;
+      height: 12px;
+      background-color: $secondaryColor;
+    }
+
+    /* Skillz */
+    .ruby {
+      width: $skillRuby;
+    }
+
+    .php {
+      width: $skillPhp;
+    }
+
+    .unix {
+      width: $skillUnix;
+    }
+
+    .javascript {
+      width: $skillJs;
+    }
+
+    .angular {
+      width: $skillAngular;
+    }
+
+    .backbone {
+      width: $skillBackbone;
+    }
+
+    .css {
+      width: $skillCss;
+    }
+
+    .testing {
+      width: $skillTesting;
+    }
+
+    .java {
+      width: $skillJava;
+    }
   }
 }
 

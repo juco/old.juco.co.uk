@@ -4,6 +4,7 @@ require 'coffee_script'
 
 class Application < Sinatra::Base
   set :views, scss: 'css', default: 'views'
+  set :server, :thin
   helpers do
     def find_template(views, name, engine, &block)
       _, folder = views.detect { |k,v| engine == Tilt[k] }

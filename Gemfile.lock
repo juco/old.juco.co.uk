@@ -27,6 +27,9 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.0)
       multi_json (~> 1.8)
+    guard-rspec (4.2.9)
+      guard (~> 2.1)
+      rspec (>= 2.14, < 4.0)
     http_parser.rb (0.5.3)
     listen (2.4.0)
       celluloid (>= 0.15.2)
@@ -78,6 +81,7 @@ DEPENDENCIES
   coffee-script
   guard
   guard-livereload
+  guard-rspec
   rack-test
   rspec
   sass (= 3.2.19)

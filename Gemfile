@@ -7,10 +7,11 @@ gem 'sass', '3.2.19'
 gem 'thin'
 
 group :development do
-  gem 'guard'
-  gem 'guard-livereload'
-  gem 'shotgun'
-
   gem 'rspec'
   gem 'rack-test', require: 'rack/test'
+
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-rspec'
+  gem 'shotgun'
 end

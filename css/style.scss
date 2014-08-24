@@ -1,5 +1,6 @@
 $secondaryColor: #5CB8E6;
-$transparent: rgba(255, 255, 255, 0.55);
+$transparent: rgba(255, 255, 255, 0.75);
+$superTransparent: rgba(255, 255, 255, 0.55);
 
 /* Skill percentages */
 $skillRuby: 70%;
@@ -42,7 +43,7 @@ article.welcome {
   width: 95%;
   min-height: 20%;
   padding: 2.5%;
-  background-color: $transparent;
+  background-color: $superTransparent;
 
   section {
     margin-right: 35px;

@@ -1,5 +1,5 @@
 $secondaryColor: #5CB8E6;
-$transparent: rgba(255, 255, 255, 0.75);
+$transparent: rgba(255, 255, 255, 0.55);
 
 /* Skill percentages */
 $skillRuby: 70%;
@@ -40,7 +40,7 @@ article.welcome {
   position: absolute;
   bottom: 0;
   width: 95%;
-  min-height: 25%;
+  min-height: 20%;
   padding: 2.5%;
   background-color: $transparent;
 
@@ -193,6 +193,7 @@ article.welcome {
 /* General styles (should be moved) */
 .icon {
   width: 23px;
+  margin-bottom: 2px;
 }
 
 .stackoverflow-icon {

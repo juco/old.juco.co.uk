@@ -1,13 +1,21 @@
-# Toggle the skills modal
-toggleSkills = (show) ->
-  skillsContainer = document.querySelector('.skills-container')
-  if show
-    skillsContainer.classList.remove 'hidden'
-  else
-    skillsContainer.classList.add 'hidden'
+# Skills container
+class Skills
+  @skillsContainer = document.querySelector('.skills-container')
+  @show: ->
+    @skillsContainer.classList.remove 'hidden'
+    @skillsContainer.classList.add 'visible'
+  @hide: ->
+    @skillsContainer.classList.add 'hidden'
+    @skillsContainer.classList.remove 'visible'
 
 document.querySelector('#skills').addEventListener 'click', ->
-  toggleSkills true
-
+  Skills.show()
 document.querySelector('#close-skills').addEventListener 'click', ->
-  toggleSkills false
+  Skills.hide()
+
+document.body.addEventListener('click', (e) ->
+  ignored = document.querySelector('.skills-container').children
+  isIgnored = Array.prototype.some.call ignored, (item) ->
+    item == e.target
+  Skills.hide() unless isIgnored
+, true)

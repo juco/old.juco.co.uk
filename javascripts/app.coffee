@@ -14,7 +14,7 @@ document.querySelector('#close-skills').addEventListener 'click', ->
   Skills.hide()
 
 document.body.addEventListener('click', (e) ->
-  ignored = document.querySelector('.skills-container').children
+  ignored = document.querySelector('.skills-container').getElementsByTagName('*')
   isIgnored = Array.prototype.some.call ignored, (item) ->
     item == e.target
   Skills.hide() unless isIgnored

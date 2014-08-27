@@ -13,6 +13,11 @@ class Application < Sinatra::Base
     end
   end
 
+  not_found do
+    status 404
+    erb :oops
+  end
+
   get '/' do
     erb :index
   end
@@ -23,7 +28,17 @@ class Application < Sinatra::Base
 
   get '/javascripts/*' do
     file = params[:splat].join('/').split('.').first
-    coffee "/../javascripts/#{file}".to_sym
+    prod_file = "dist/#{file}.js"
+
+    if settings.production?
+      if File.exists? prod_file
+        send_file prod_file
+      else
+        not_found
+      end
+    else
+      coffee "/../javascripts/#{file}".to_sym
+    end
   end
 
   run! if app_file == $0

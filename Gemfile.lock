@@ -110,6 +110,7 @@ DEPENDENCIES
   guard-livereload
   guard-rspec
   rack-test
+  rake
   rspec
   sass (= 3.2.19)
   shotgun

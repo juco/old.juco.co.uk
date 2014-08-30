@@ -51,7 +51,7 @@ namespace :deploy do
   desc 'Compile assets'
   task :assets do
     on roles(:web) do
-      within_current_path do
+      within current_path do
         execute :rake, 'assets'
       end
     end

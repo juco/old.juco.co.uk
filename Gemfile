@@ -4,6 +4,7 @@ ruby "2.0.0"
 gem 'sinatra'
 gem 'coffee-script'
 gem 'sass', '3.2.19'
+gem 'uglifier'
 
 gem 'thin'
 

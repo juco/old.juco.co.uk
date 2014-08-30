@@ -48,6 +48,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Compile assets'
+  task :assets do
+    on roles(:web) do
+      within_current_path do
+        execute :rake, 'assets'
+      end
+    end
+  end
+
   desc 'Restart application'
   task :start do
     on roles(:web) do
@@ -58,6 +67,7 @@ namespace :deploy do
     end
   end
 
+  after :finishing, :assets
   before :starting, :stop
   after :publishing, :start
 end

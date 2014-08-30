@@ -9,5 +9,7 @@ task :assets do
     compiled += CoffeeScript.compile(File.open file)
   end
   File.open('tmp/app.js', 'w') { |f| f.write compiled }
-  File.open('dist/app.js', 'w') { |f| f.write(Uglifier.compile(File.read('tmp/app.js'))) }
+  File.open('dist/app.js', 'w') do |f|
+    f.write(Uglifier.compile(File.read('tmp/app.js')))
+  end
 end

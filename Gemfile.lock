@@ -43,6 +43,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     http_parser.rb (0.5.3)
     i18n (0.6.11)
+    json (1.8.1)
     listen (2.4.0)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -93,6 +94,9 @@ GEM
     thor (0.19.1)
     tilt (1.4.1)
     timers (1.1.0)
+    uglifier (2.5.0)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -106,8 +110,10 @@ DEPENDENCIES
   guard-livereload
   guard-rspec
   rack-test
+  rake
   rspec
   sass (= 3.2.19)
   shotgun
   sinatra
   thin
+  uglifier

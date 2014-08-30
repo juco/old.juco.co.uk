@@ -31,7 +31,9 @@ h2 {
 }
 
 .container {
+  position: fixed;
   height: 100%;
+  width: 100%;
   background: URL('/background.jpg') no-repeat center center fixed;
   background-size: cover;
 }

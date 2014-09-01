@@ -13,7 +13,7 @@ $skillTesting: 60%;
 $skillJava: 30%;
 
 /* Screen sizes */
-$iphoneScreenSize: 768px;
+$iphoneScreenSize: 640px;
 
 html, body {
   width: 100%;
@@ -75,12 +75,17 @@ article.welcome {
       list-style: none;
 
       a {
+        text-decoration: none;
         &:hover {
           fill: $secondaryColor;
         }
       }
 
-      @media (max-width: 768px) {
+      .link-description {
+        display: none;
+      }
+
+      @media (max-width: $iphoneScreenSize) {
         position: fixed;
         top: 0;
         left: 0;

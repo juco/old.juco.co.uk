@@ -1,21 +1,54 @@
-# Skills container
-class Skills
-  @skillsContainer = document.querySelector('.skills-container')
-  @show: ->
-    @skillsContainer.classList.remove 'hidden'
-    @skillsContainer.classList.add 'visible'
-  @hide: ->
-    @skillsContainer.classList.add 'hidden'
-    @skillsContainer.classList.remove 'visible'
+class Container
+  @containers:
+    skillsContainer: new Container '.skills-container'
+    contactContainer: new Container '.contact-container'
 
+  @byName: (name) ->
+    throw Error 'Container is not registered' unless @containers[name]
+    @containers[name]
+
+  @eachContainer: (cb) ->
+    for name, container of @containers
+      cb.call(this, name, container)
+
+  constructor: (selector) ->
+    @container = document.querySelector selector
+
+  show: ->
+    @container.classList = @container.classList || []
+    @container.classList.remove 'hidden'
+    @container.classList.add 'visible'
+
+  hide: ->
+    @container.classList.add 'hidden'
+    @container.classList.remove 'visible'
+
+  children: ->
+    @container.getElementsByTagName '*'
+
+  eachChild: (cb) ->
+    Array.prototype.forEach.call this.children(), (item) ->
+      cb.call(this, item)
+
+# Skills events
 document.querySelector('#skills').addEventListener 'click', ->
-  Skills.show()
+  Container.containers.skillsContainer.show()
 document.querySelector('#close-skills').addEventListener 'click', ->
-  Skills.hide()
+  skillsContainer.hide()
+
+# Contact events
+document.querySelector('#contact').addEventListener 'click', ->
+  Container.byName('contactContainer').show()
 
 document.body.addEventListener('click', (e) ->
-  ignored = document.querySelector('.skills-container').getElementsByTagName('*')
+  ignored = []
+  Container.eachContainer (name, container) ->
+    container.eachChild (el) ->
+      ignored.push el
+
   isIgnored = Array.prototype.some.call ignored, (item) ->
     item == e.target
-  Skills.hide() unless isIgnored
+
+  Container.eachContainer (name, container) ->
+    container.hide()
 , true)

@@ -10,7 +10,7 @@
     <div class="links">
       <span><a href="#" id="skills">Skills</a></span>
       <span><a href="#">CV</a></span>
-      <span><a href="#">Contact</a></span>
+      <span><a href="#" id="contact">Contact</a></span>
     </div>
   </section>
   <div class="social-links">
@@ -132,4 +132,13 @@
       <li>Composer</li>
     </ul>
   </div>
+</div>
+
+<div class="contact-container hidden">
+  <form method="post" action="/contact">
+    <input type="text" name="name" paceholder="Your name" />
+    <input type="text" name="email" placeholder="Email address" />
+    <textarea name="message"></textarea>
+    <input type="submit" value="Send" />
+  </form>
 </div>

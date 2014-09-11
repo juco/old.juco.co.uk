@@ -124,10 +124,6 @@ article.welcome {
     clear: left;
   }
 
-  &.hidden {
-    display: none;
-  }
-
   div.actions {
     text-align: right;
     padding: 0 10px 0 10px
@@ -203,6 +199,10 @@ article.welcome {
       width: $skillJava;
     }
   }
+}
+
+.hidden {
+  display: none;
 }
 
 /* General styles (should be moved) */

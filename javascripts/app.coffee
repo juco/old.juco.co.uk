@@ -1,18 +1,35 @@
 class Container
-  @containers:
-    skillsContainer: new Container '.skills-container'
-    contactContainer: new Container '.contact-container'
+  # Load the containers
+  @load: ->
+    @containers || @containers =
+      skillsContainer: new Container 'skills', '.skills-container'
+      contactContainer: new Container 'contact', '.contact-container'
 
+  # Grab a container by name
   @byName: (name) ->
     throw Error 'Container is not registered' unless @containers[name]
     @containers[name]
 
+  # Iterate through the containers and execute the given callback on each
   @eachContainer: (cb) ->
     for name, container of @containers
       cb.call(this, name, container)
 
-  constructor: (selector) ->
+  constructor: (name, selector) ->
+    @name = name
     @container = document.querySelector selector
+    this.bindEvents()
+
+  # Bind any container events
+  bindEvents: ->
+    @container
+      .querySelector('.actions .cancel-link')
+      .addEventListener 'click', =>
+        this.hide()
+    document
+      .querySelector(".show-#{@name}")
+      .addEventListener 'click', =>
+        this.show()
 
   show: ->
     @container.classList = @container.classList || []
@@ -23,32 +40,31 @@ class Container
     @container.classList.add 'hidden'
     @container.classList.remove 'visible'
 
+  # Get all children elements for the container
   children: ->
-    @container.getElementsByTagName '*'
+    children = @container.getElementsByTagName '*'
+    Array.prototype.push.call this, children, this.container
+    children
 
+  # Execute the given callback for each container child
   eachChild: (cb) ->
     Array.prototype.forEach.call this.children(), (item) ->
       cb.call(this, item)
 
-# Skills events
-document.querySelector('#skills').addEventListener 'click', ->
-  Container.containers.skillsContainer.show()
-document.querySelector('#close-skills').addEventListener 'click', ->
-  skillsContainer.hide()
+# Load the containers
+Container.load()
 
-# Contact events
-document.querySelector('#contact').addEventListener 'click', ->
-  Container.byName('contactContainer').show()
-
+# Detect a click anywhere on the DOM. Hide an active modal if not inside
 document.body.addEventListener('click', (e) ->
   ignored = []
   Container.eachContainer (name, container) ->
     container.eachChild (el) ->
       ignored.push el
 
-  isIgnored = Array.prototype.some.call ignored, (item) ->
+  isIgnored = ignored.some (item) ->
     item == e.target
 
-  Container.eachContainer (name, container) ->
-    container.hide()
+  unless isIgnored
+    Container.eachContainer (name, container) ->
+      container.hide()
 , true)

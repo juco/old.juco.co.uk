@@ -15,6 +15,27 @@ $skillJava: 30%;
 /* Screen sizes */
 $iphoneScreenSize: 640px;
 
+@mixin modal() {
+  position: fixed;
+  width: 75%;
+  left: 50%;
+  height: 60%;
+  margin: 0 0 0 -38%;
+  padding: 20px;
+  background-color: $transparent;
+  overflow-y: scroll;
+
+  div.actions {
+    text-align: right;
+    padding: 0 10px 0 10px
+  }
+}
+
+@mixin center() {
+  display: block;
+  margin: 0 auto;
+}
+
 html, body {
   width: 100%;
   margin: 0;
@@ -107,26 +128,13 @@ article.welcome {
 }
 
 .skills-container {
-  position: fixed;
-  width: 75%;
-  left: 50%;
-  height: 60%;
-  margin: 0 0 0 -38%;
-  padding: 20px;
-  background-color: $transparent;
-  overflow-y: scroll;
-
+  @include modal();
   .matrix {
     height: 400px;
   }
 
   .additions {
     clear: left;
-  }
-
-  div.actions {
-    text-align: right;
-    padding: 0 10px 0 10px
   }
 
   dt {
@@ -198,6 +206,32 @@ article.welcome {
     .java {
       width: $skillJava;
     }
+  }
+}
+
+.contact-container {
+  @include modal();
+
+  .form-field {
+    @include center();
+    width: 70%;
+    margin-bottom: 10px;
+  }
+
+  .form-field-text {
+    @extend .form-field;
+    height: 25px;
+  }
+
+  .form-field-textarea {
+    @extend .form-field;
+    height: 50px;
+  }
+
+  .submit {
+    @include center();
+    width: 90px;
+    height: 20px;
   }
 }
 

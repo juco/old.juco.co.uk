@@ -68,6 +68,6 @@ namespace :deploy do
   end
 
   after :finishing, :assets
-  before :starting, :stop
+  before :publishing, :stop
   after :publishing, :start
 end

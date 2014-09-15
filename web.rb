@@ -55,7 +55,7 @@ class Application < Sinatra::Base
       subject: 'Website contact',
       body: message
     )
-    redirect back
+    redirect '/?thank=you'
   end
 
   run! if app_file == $0

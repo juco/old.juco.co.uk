@@ -1,5 +1,11 @@
 <%= erb :_svg %>
 
+<% if params[:thank] %>
+  <div class="thanks">
+    Thank you! I will be in touch soon.
+  </div>
+<% end %>
+
 <article class="welcome">
   <section>
     <img src="me.jpg" class="me" />

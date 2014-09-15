@@ -14,11 +14,6 @@ class Application < Sinatra::Base
     end
   end
 
-  not_found do
-    status 404
-    erb :oops
-  end
-
   get '/' do
     erb :index
   end
@@ -56,6 +51,11 @@ class Application < Sinatra::Base
       body: message
     )
     redirect '/?thank=you'
+  end
+
+  not_found do
+    status 404
+    erb :oops
   end
 
   run! if app_file == $0

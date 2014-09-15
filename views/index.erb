@@ -134,9 +134,21 @@
   <%= erb :_container_actions %>
   <h2>Got something to say?</h2>
   <form method="post" action="/contact">
-    <input type="text" name="name" placeholder="Your name" class="form-field-text" />
-    <input type="text" name="email" placeholder="Email address" class="form-field-text" />
-    <textarea name="message" class="form-field-textarea"></textarea>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your name"
+      class="form-field-text" />
+    <input
+      type="text"
+      name="email"
+      placeholder="Email address"
+      class="form-field-text" />
+    <textarea
+      name="message"
+      class="form-field-textarea"
+      placeholder="Message...">
+    </textarea>
     <input type="submit" value="Send" class="submit btn-primary" />
   </form>
 </div>

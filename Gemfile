@@ -9,6 +9,8 @@ gem 'uglifier'
 
 gem 'thin'
 
+gem 'pony'
+
 gem 'rspec'
 
 group :development do

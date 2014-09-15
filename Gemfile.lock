@@ -49,11 +49,16 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.4)
+    mail (2.6.1)
+      mime-types (>= 1.16, < 3)
     method_source (0.8.2)
+    mime-types (2.3)
     multi_json (1.10.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    pony (1.11)
+      mail (>= 2.0)
     pry (0.10.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -109,6 +114,7 @@ DEPENDENCIES
   guard
   guard-livereload
   guard-rspec
+  pony
   rack-test
   rake
   rspec

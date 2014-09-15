@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sass'
 require 'coffee_script'
+require 'pony'
 
 class Application < Sinatra::Base
   set :views, scss: 'css', default: 'views'
@@ -39,6 +40,22 @@ class Application < Sinatra::Base
     else
       coffee "/../javascripts/#{file}".to_sym
     end
+  end
+
+  post '/contact' do
+    message = <<-EOS
+      You have been contacted by #{params['name']} <#{params['email']}>
+
+      Message:
+        #{params['message']}
+    EOS
+    Pony.mail(
+      to: 'julian@juco.co.uk',
+      from: 'contact@juco.co.uk',
+      subject: 'Website contact',
+      body: message
+    )
+    redirect back
   end
 
   run! if app_file == $0

@@ -68,3 +68,7 @@ document.body.addEventListener('click', (e) ->
     Container.eachContainer (name, container) ->
       container.hide()
 , true)
+
+# Quick hack for CV TODO
+document.querySelector('.show-cv').addEventListener 'click', ->
+  alert 'Ah yea, I should add this'

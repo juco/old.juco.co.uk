@@ -1,21 +1,19 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
+ruby "2.2.0"
 
 gem 'sinatra'
 gem 'rake'
 gem 'coffee-script'
-gem 'sass', '3.2.19'
+gem 'sass'
 gem 'uglifier'
 
 gem 'thin'
-
 gem 'pony'
-
-gem 'rspec'
 
 group :development do
   gem 'rack-test', require: 'rack/test'
 
+  gem 'rspec'
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-rspec'

@@ -10,16 +10,17 @@ gem 'uglifier'
 gem 'thin'
 gem 'pony'
 
-group :development do
-  gem 'rack-test', require: 'rack/test'
+gem 'rack-test', require: 'rack/test'
+gem 'rspec'
 
-  gem 'rspec'
+group :development do
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-rspec'
   gem 'shotgun'
 
-  gem 'capistrano', '3.2.1'
+  gem 'capistrano'
   gem 'capistrano-bundler'
-  gem 'capistrano-rvm', '0.1.1'
+  #gem 'capistrano-rvm' 
+  gem 'rvm1-capistrano3', :require => false
 end

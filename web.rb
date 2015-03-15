@@ -39,37 +39,7 @@ class Application < Sinatra::Base
       else
         not_found
       end
-      #coffee path if File.exists? "#{path}.coffee"
-      #send_file if File.exist? "#{path}.js"
     end
-
-    #puts params[:splat]
-    #path = params[:splat].join('/')
-
-    #if settings.production?
-    #  prod_path = "dist/#{path.gsub('.coffee', '.js')}"
-    #  return not_found unless File.exist? prod_path
-    #  send_file prod_path
-    #else
-    #  coffee "/../javascripts/#{file}".to_sym
-    #end
-
-
-
-
-
-    #file = params[:splat].join('/').split('.').first
-    #prod_file = "dist/#{file}.js"
-
-    #if settings.production?
-    #  if File.exists? prod_file
-    #    send_file prod_file
-    #  else
-    #    not_found
-    #  end
-    #else
-    #  coffee "/../javascripts/#{file}".to_sym
-    #end
   end
 
   post '/contact' do

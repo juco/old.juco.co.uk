@@ -42,10 +42,10 @@ namespace :deploy do
   desc 'Stop current instance'
   task :stop do
     on roles(:web) do
-      puts "checking whether #{release_path} exists.."
-      if execute :test, "-d #{release_path}" and test :test, "-e #{release_path}/thin.pid"
-        within release_path do
-          execute :thin, "stop -P #{release_path}/thin.pid"
+      puts "checking whether #{current_path} exists.."
+      if execute :test, "-d #{current_path}" and test :test, "-e #{current_path}/thin.pid"
+        within current_path do
+          execute :thin, "stop -P #{current_path}/thin.pid"
         end
       end
     end
@@ -54,7 +54,7 @@ namespace :deploy do
   desc 'Compile assets'
   task :assets do
     on roles(:web) do
-      within release_path do
+      within current_path do
         execute :rake, 'assets'
       end
     end
@@ -63,14 +63,14 @@ namespace :deploy do
   desc 'Restart application'
   task :start do
     on roles(:web) do
-      within release_path do
+      within current_path do
         puts 'Attmpting to start thin...'
         execute :thin, '-e production -d start -P thin.pid'
       end
     end
   end
 
+  after :updated, :stop
+  after :published, :start
   after :finishing, :assets
-  before :publishing, :stop
-  after :publishing, :start
 end

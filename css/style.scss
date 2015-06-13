@@ -37,6 +37,13 @@ $iphoneScreenSize: 640px;
   margin: 0 auto;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html, body {
   width: 100%;
   margin: 0;

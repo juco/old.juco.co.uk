@@ -119,10 +119,13 @@ article.welcome {
   min-height: 20%;
   padding: 2.5%;
   background-color: $transparent-super;
+  display: -webkit-box;
   display: flex;
 
   section {
+    -webkit-flex-grow: 1;
     flex-grow: 1;
+    width: 90%; /* Safari hack :-( */
 
     .links {
       text-align: center;

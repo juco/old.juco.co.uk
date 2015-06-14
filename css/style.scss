@@ -120,8 +120,11 @@ article.welcome {
   min-height: 20%;
   padding: 2.5%;
   background-color: $transparent-super;
+  display: flex;
 
   section {
+    flex-grow: 1;
+
     header {
       font-wight: bold;
       font-size: 30px;
@@ -137,12 +140,9 @@ article.welcome {
   }
 
   .social-links {
-    position: absolute;
-    right: 20px;
-    top: 0;
-
     ul {
       list-style: none;
+      margin: 0;
 
       a {
         text-decoration: none;

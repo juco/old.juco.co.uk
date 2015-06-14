@@ -67,98 +67,102 @@
 
 <div class="skills-container hidden">
   <%= erb :_container_actions %>
-  <div class="matrix">
-    <dl>
-      <dt>Ruby (on rails)</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill ruby"></div>
-        </div>
-      </dd>
+  <div class="modal-content">
+    <div class="matrix">
+      <dl>
+        <dt>Ruby (on rails)</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill ruby"></div>
+          </div>
+        </dd>
 
-      <dt>PHP</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill php"></div>
-        </div>
-      </dd>
+        <dt>PHP</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill php"></div>
+          </div>
+        </dd>
 
-      <dt>Linux / Unix / OS X</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill unix"></div>
-        </div>
-      </dd>
+        <dt>Linux / Unix / OS X</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill unix"></div>
+          </div>
+        </dd>
 
-      <dt>Javascript / Coffeescript / Node</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill javascript"></div>
-        </div>
-      </dd>
+        <dt>Javascript / Coffeescript / Node</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill javascript"></div>
+          </div>
+        </dd>
 
-      <dt>Angular JS</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill angular"></div>
-        </div>
-      </dd>
+        <dt>Angular JS</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill angular"></div>
+          </div>
+        </dd>
 
-      <dt>Backbone JS</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill angular"></div>
-        </div>
-      </dd>
+        <dt>Backbone JS</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill angular"></div>
+          </div>
+        </dd>
 
-      <dt>Testing (PHPUnit, Rspec, Jasmine)</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill testing"></div>
-        </div>
-      </dd>
+        <dt>Testing (PHPUnit, Rspec, Jasmine)</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill testing"></div>
+          </div>
+        </dd>
 
-      <dt>Java</dt>
-      <dd>
-        <div class="skill-bar">
-          <div class="skill java"></div>
-        </div>
-      </dd>
-    </dl>
-  </div>
+        <dt>Java</dt>
+        <dd>
+          <div class="skill-bar">
+            <div class="skill java"></div>
+          </div>
+        </dd>
+      </dl>
+    </div>
 
-  <div class="additions">
-    <h3>and these:</h3>
-    <ul>
-      <li>Agile (Scrum, Kanban)</li>
-      <li>Git, Subversion, CVS</li>
-      <li>Continuous Integration (Travis, Jenkins)</li>
-      <li>Deployment (Capistrano)</li>
-      <li>Cloud (AWS, Heroku)</li>
-      <li>Node JS</li>
-    </ul>
+    <div class="additions">
+      <h3>and these:</h3>
+      <ul>
+        <li>Agile (Scrum, Kanban)</li>
+        <li>Git, Subversion, CVS</li>
+        <li>Continuous Integration (Travis, Jenkins)</li>
+        <li>Deployment (Capistrano)</li>
+        <li>Cloud (AWS, Heroku)</li>
+        <li>Node JS</li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <div class="contact-container hidden">
   <%= erb :_container_actions %>
-  <h2>Got something to say?</h2>
-  <form method="post" action="/contact">
-    <input
-      type="text"
-      name="name"
-      placeholder="Your name"
-      class="form-field-text" />
-    <input
-      type="text"
-      name="email"
-      placeholder="Email address"
-      class="form-field-text" />
-    <textarea
-      name="message"
-      placeholder="Message..."
-      class="form-field-textarea">
-    </textarea>
-    <input type="submit" value="Send" class="submit btn-primary" />
-  </form>
+  <div class="modal-content">
+    <h2>Got something to say?</h2>
+    <form method="post" action="/contact">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        class="form-field-text" />
+      <input
+        type="text"
+        name="email"
+        placeholder="Email address"
+        class="form-field-text" />
+      <textarea
+        name="message"
+        placeholder="Message..."
+        class="form-field-textarea">
+      </textarea>
+      <input type="submit" value="Send" class="submit btn-primary" />
+    </form>
+  </div>
 </div>

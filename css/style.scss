@@ -1,20 +1,33 @@
-$secondaryColor: #5CB8E6;
-$buttonColor: #2FA4E7;
+$color-primary: #5CB8E6;
+$color-secondary: #2FA4E7;
 $transparent: rgba(255, 255, 255, 0.75);
-$superTransparent: rgba(255, 255, 255, 0.55);
+$transparent-super: rgba(255, 255, 255, 0.55);
+
+$logo-width: 180px;
+
+$font-size-href: 15px;
+
+$icon-width: 23px;
+$icon-height: 20px;
+$icon-margin: 2px;
+
+$button-width: 90px;
+$button-height: 30px;
+$button-color: #fff;
+$button-padding: 3px 10px;
 
 /* Skill percentages */
-$skillRuby: 70%;
-$skillUnix: 80%;
-$skillPhp: 80%;
-$skillJs: 70%;
-$skillAngular: 80%;
-$skillBackbone: 80%;
-$skillTesting: 60%;
-$skillJava: 30%;
+$skill-ruby: 70%;
+$skill-unix: 80%;
+$skill-php: 80%;
+$skill-js: 70%;
+$skill-angular: 80%;
+$skill-backbone: 80%;
+$skill-testing: 60%;
+$skill-java: 30%;
 
 /* Screen sizes */
-$iphoneScreenSize: 640px;
+$breakpoint-sm: 640px;
 
 @mixin modal() {
   position: fixed;
@@ -24,11 +37,14 @@ $iphoneScreenSize: 640px;
   margin: 0 0 0 -38%;
   padding: 20px;
   background-color: $transparent;
-  overflow-y: scroll;
 
-  div.actions {
+  div.modal-actions {
     text-align: right;
-    padding: 0 10px 0 10px
+  }
+
+  div.modal-content {
+    height: 100%;
+    overflow-y: scroll;
   }
 }
 
@@ -54,8 +70,8 @@ body {
 }
 
 a {
-  color: $secondaryColor;
-  font-size: 15px;
+  color: $color-primary;
+  font-size: $font-size-href;
 }
 
 h2 {
@@ -67,23 +83,23 @@ h2 {
 }
 
 .icon {
-  width: 23px;
-  height: 20px;
-  margin-bottom: 2px;
+  width: $icon-width;
+  height: $icon-height;
+  margin-bottom: $icon-margin;
 }
 
 .logo {
-  width: 180px;
+  width: $logo-width;
 }
 
 .btn-primary {
-  width: 90px;
-  height: 30px;
-  color: #fff;
-  background-color: $buttonColor;
+  width: $button-width;
+  height: $button-height;
+  color: $button-color;
+  background-color: $color-secondary;
   background-image: webkit-linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
   background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
-  padding: 3px 10px;
+  padding: $button-padding;
   border-radius: 4px;
   border: 1px solid transparent;
   vertical-align: middle;
@@ -100,14 +116,12 @@ h2 {
 article.welcome {
   position: absolute;
   bottom: 0;
-  width: 95%;
+  width: 100%;
   min-height: 20%;
   padding: 2.5%;
-  background-color: $superTransparent;
+  background-color: $transparent-super;
 
   section {
-    margin-right: 35px;
-
     header {
       font-wight: bold;
       font-size: 30px;
@@ -133,7 +147,7 @@ article.welcome {
       a {
         text-decoration: none;
         &:hover {
-          fill: $secondaryColor;
+          fill: $color-primary;
         }
       }
 
@@ -141,7 +155,7 @@ article.welcome {
         display: none;
       }
 
-      @media (max-width: $iphoneScreenSize) {
+      @media (max-width: $breakpoint-sm) {
         position: fixed;
         top: 0;
         left: 0;
@@ -164,20 +178,13 @@ article.welcome {
 
 .skills-container {
   @include modal();
-  .matrix {
-    height: 400px;
-  }
-
-  .additions {
-    clear: left;
-  }
 
   dt {
     float: left;
     clear: left;
     width: 40%;
 
-    @media (max-width: $iphoneScreenSize) {
+    @media (max-width: $breakpoint-sm) {
       width: 100%;
       margin-bottom: 5px;
       text-align: center;
@@ -189,58 +196,61 @@ article.welcome {
     width: 50%;
     margin-bottom: 30px;
 
-    @media (max-width: $iphoneScreenSize) {
-      width: 100%;
+    @media (max-width: $breakpoint-sm) {
+      width: 90%;
     }
   }
 
   .skill-bar {
     max-width: 70%;
     background-color: transparent;
-    height: 12px;
     border-width: 2px;
     border-radius: 8px;
     border-style: solid;
-    border-color: $secondaryColor;
+    border-color: $color-primary;
 
     .skill {
       border-radius: 6px;
       height: 12px;
-      background-color: $secondaryColor;
+      background-color: $color-primary;
     }
 
     /* Skillz */
     .ruby {
-      width: $skillRuby;
+      width: $skill-ruby;
     }
 
     .php {
-      width: $skillPhp;
+      width: $skill-php;
     }
 
     .unix {
-      width: $skillUnix;
+      width: $skill-unix;
     }
 
     .javascript {
-      width: $skillJs;
+      width: $skill-js;
     }
 
     .angular {
-      width: $skillAngular;
+      width: $skill-angular;
     }
 
     .backbone {
-      width: $skillBackbone;
+      width: $skill-backbone;
     }
 
     .testing {
-      width: $skillTesting;
+      width: $skill-testing;
     }
 
     .java {
-      width: $skillJava;
+      width: $skill-java;
     }
+  }
+
+  .additions {
+    float: left;
   }
 }
 
@@ -272,5 +282,5 @@ article.welcome {
   width: 100%;
   color: #fff;
   text-align: center;
-  background: $secondaryColor;
+  background: $color-primary;
 }

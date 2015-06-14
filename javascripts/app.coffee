@@ -23,7 +23,7 @@ class Container
   # Bind any container events
   bindEvents: ->
     @container
-      .querySelector('.actions .cancel-link')
+      .querySelector('.modal-actions .cancel-link')
       .addEventListener 'click', =>
         this.hide()
     document

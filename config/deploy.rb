@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'juco.co.uk'
-set :repo_url, 'ssh://juco@juco.co.uk/git/site'
+set :repo_url, 'git@github.com:juco/juco.co.uk.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

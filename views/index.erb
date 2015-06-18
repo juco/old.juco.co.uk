@@ -7,16 +7,18 @@
 <% end %>
 
 <article class="welcome">
-  <section>
+  <section class="main-section">
     <img src="me.jpg" class="me" />
     <img src="/logo.png" class="logo" />
-    <p>
-      A full-stack developer fulfilling the role of Lead Developer at
-      <a href="http://www.pure360.com">Pure360</a>.
-    </p>
-    <p>
-      Currently living in Brighton and primarily interested in Ruby and Javascript.
-    </p>
+    <div class="blurb">
+      <p>
+        A full-stack developer fulfilling the role of Lead Developer at
+        <a href="http://www.pure360.com">Pure360</a>.
+      </p>
+      <p>
+        Currently living in Brighton and primarily interested in Ruby and Javascript.
+      </p>
+    </div>
     <div class="links">
       <span><a href="#" class="show-skills">Skills</a></span>
       <span><a target="_blank" href="https://docs.google.com/a/juco.co.uk/document/d/1a7W6aC6LVHAsCtnJrKm1tj6VSgVyca4lcRc-EupzPug/edit?usp=sharing" class="show-cv">CV</a></span>
@@ -26,7 +28,7 @@
   <div class="social-links">
     <ul>
       <li>
-        <a href="http://uk.linkedin.com/in/cohenjulian/" target="_blank">
+        <a href="http://lnkdin.me/juco" target="_blank">
           <span class="link-description">Linkedin</span>
           <svg class="icon icon-linkedin" viewBox="0 0 32 32"><use xlink:href="#icon-linkedin"></use></svg>
         </a>
@@ -160,9 +162,8 @@
       <textarea
         name="message"
         placeholder="Message..."
-        class="form-field-textarea">
-      </textarea>
-      <input type="submit" value="Send" class="submit btn-primary" />
+        class="form-field-textarea"></textarea>
+      <input type="submit" value="Send" class="submit btn btn-primary" />
     </form>
   </div>
 </div>

@@ -15,6 +15,12 @@ $button-width: 90px;
 $button-height: 30px;
 $button-padding: 3px 10px;
 
+$form-field-width: 70%;
+$form-field-margin: 10px;
+$form-field-padding: 3px;
+$form-field-text-height: 30px;
+$form-field-textarea-height: 150px;
+
 /* Skill percentages */
 $skill-ruby: 70%;
 $skill-unix: 80%;
@@ -50,6 +56,13 @@ $breakpoint-sm: 640px;
 @mixin center() {
   display: block;
   margin: 0 auto;
+  float: none;
+}
+
+@mixin center-on-bp($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @include center();
+  }
 }
 
 html {
@@ -66,15 +79,14 @@ html, body {
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+  a {
+    color: $color-primary;
+    font-size: $font-size-href;
+  }
 
-a {
-  color: $color-primary;
-  font-size: $font-size-href;
-}
-
-h2 {
-  text-align: center;
+  h2 {
+    text-align: center;
+  }
 }
 
 .hidden {
@@ -91,18 +103,22 @@ h2 {
   width: $logo-width;
 }
 
-.btn-primary {
-  width: $button-width;
-  height: $button-height;
-  color: $color-font-alt;
-  background-color: $color-secondary;
-  background-image: webkit-linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
-  background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+.btn {
   padding: $button-padding;
   border-radius: 4px;
   border: 1px solid transparent;
   vertical-align: middle;
+
+  &.btn-primary {
+    width: $button-width;
+    height: $button-height;
+    color: $color-font-alt;
+    background-color: $color-secondary;
+    background-image: webkit-linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+    background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+  }
 }
+
 
 .container {
   position: fixed;
@@ -122,10 +138,14 @@ article.welcome {
   display: -webkit-box;
   display: flex;
 
-  section {
+  section.main-section {
     -webkit-flex-grow: 1;
     flex-grow: 1;
     width: 90%; /* Safari hack :-( */
+
+    .me, .logo {
+      @include center-on-bp($breakpoint-sm);
+    }
 
     .links {
       text-align: center;
@@ -260,18 +280,19 @@ article.welcome {
 
   .form-field {
     @include center();
-    width: 70%;
-    margin-bottom: 10px;
+    width: $form-field-width;
+    margin-bottom: $form-field-margin;
   }
 
   .form-field-text {
     @extend .form-field;
-    height: 25px;
+    height: $form-field-text-height;
+    padding-left: $form-field-padding;
   }
 
   .form-field-textarea {
     @extend .form-field;
-    height: 150px;
+    height: $form-field-textarea-height;
   }
 
   .submit {

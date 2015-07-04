@@ -82,6 +82,11 @@ body {
   a {
     color: $color-primary;
     font-size: $font-size-href;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   h2 {
